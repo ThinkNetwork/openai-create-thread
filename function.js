@@ -1,4 +1,4 @@
-window.function = async function(api_key, messages, metadata) {
+window.function = async function(api_key, messages, metadata, tool_resources) {
     // Validate API Key
     if (!api_key.value) {
         return "Error: OpenAI API Key is required.";
@@ -27,10 +27,21 @@ window.function = async function(api_key, messages, metadata) {
         }
     }
 
+    // Parse tool resources if provided
+    let toolResourcesValue = undefined;
+    if (tool_resources.value) {
+        try {
+            toolResourcesValue = JSON.parse(tool_resources.value);
+        } catch (e) {
+            return "Error: Invalid JSON format for tool resources.";
+        }
+    }
+
     // Construct request payload (only include fields if they have valid values)
     const payload = {};
     if (messagesValue) payload.messages = messagesValue;
     if (metadataValue) payload.metadata = metadataValue;
+    if (toolResourcesValue) payload.tool_resources = toolResourcesValue;
 
     // API endpoint URL
     const apiUrl = "https://api.openai.com/v1/threads";
