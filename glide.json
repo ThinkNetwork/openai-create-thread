@@ -2,7 +2,7 @@
   {
     "kind": "column",
     "name": "Create OpenAI Thread",
-    "description": "Create a new conversation thread in OpenAI's API. You can create an empty thread or provide initial messages.",
+    "description": "Create a new conversation thread in OpenAI's API. You can create an empty thread or provide initial messages, metadata, and tool resources.",
     "author": "Gavin Horne <gavin@thinknetwork.com.au>",
     "params": [
       {
@@ -18,6 +18,11 @@
       {
         "name": "metadata",
         "displayName": "Metadata (JSON format, Optional)",
+        "type": "string"
+      },
+      {
+        "name": "tool_resources",
+        "displayName": "Tool Resources (JSON format, Optional)",
         "type": "string"
       }
     ],
