@@ -1,9 +1,8 @@
-
 [
   {
     "kind": "column",
-    "name": "OpenAI (Assistants)",
-    "description": "Create, modify and run OpenAI Assistants.",
+    "name": "Create OpenAI Thread",
+    "description": "Create a new conversation thread in OpenAI's API. You can create an empty thread or provide initial messages.",
     "author": "Gavin Horne <gavin@thinknetwork.com.au>",
     "params": [
       {
@@ -12,18 +11,13 @@
         "type": "string"
       },
       {
-        "name": "endpoint",
-        "displayName": "API Endpoint (Required)",
+        "name": "messages",
+        "displayName": "Messages (JSON format, Optional)",
         "type": "string"
       },
       {
-        "name": "body",
-        "displayName": "Body (JSON Schema Required)",
-        "type": "string"
-      },
-      {
-        "name": "json",
-        "displayName": "JSON Schema (Output)",
+        "name": "metadata",
+        "displayName": "Metadata (JSON format, Optional)",
         "type": "string"
       }
     ],
